@@ -1,7 +1,7 @@
 import re
 
 START = r"17/May/2015:10:05:03"
-END = r"19/MAY/2015:21:05:23"
+END = r"19/May/2015:21:05:23"
 
 input_filename = ".\\apache_logs.txt"
 result_filename = "required period.txt"
@@ -16,7 +16,7 @@ def search_for_desired_period():
         if re.findall(START, line) != None:
             result_file.write(line + '\n')
 
-        if re.search(r"19/May/2015:21:05:23", line) != None:
+        if re.search(END, line) != None:
             break
     input_file.close()
     result_file.close()
